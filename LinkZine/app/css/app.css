@@ -1,10 +1,9 @@
-.pesho {
-	color:red;
+span{
+	color: white;
+	margin: 18px 350px;
 }
 
-.pesho:hover {
-	color:blue 
-}
-.even_row {
-	background: red;
+.mainForm{
+	margin-left: 25%;
+	margin-top: 5%;
 }
