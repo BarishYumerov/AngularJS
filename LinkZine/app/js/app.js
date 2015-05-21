@@ -1,0 +1,1 @@
+var linkZone = angular.module()
