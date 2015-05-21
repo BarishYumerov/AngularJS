@@ -16,7 +16,7 @@ app.config(function ($routeProvider) {
 
     $routeProvider.when('/login', {
         templateUrl: 'partials/Login.html',
-        controller: 'GuestHomeController'
+        controller: 'LoginController'
     });
 
     $routeProvider.otherwise(
