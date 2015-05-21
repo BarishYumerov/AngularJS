@@ -10,8 +10,8 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when('/register', {
-        templateUrl: 'partials/GuestHome.html',
-        controller: 'GuestHomeController'
+        templateUrl: 'partials/Register.html',
+        controller: 'RegisterController'
     });
 
     $routeProvider.when('/login', {

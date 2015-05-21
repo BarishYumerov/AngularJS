@@ -7,3 +7,13 @@ span{
 	margin-left: 25%;
 	margin-top: 5%;
 }
+
+.registerForm{
+	margin-left: 25%;
+	margin-top: 5%;
+}
+.registerForm label{
+	display: block;
+	margin-right: 100px;
+	width: auto;
+}
