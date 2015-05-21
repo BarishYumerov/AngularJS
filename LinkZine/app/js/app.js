@@ -14,6 +14,11 @@ app.config(function ($routeProvider) {
         controller: 'GuestHomeController'
     });
 
+    $routeProvider.when('/login', {
+        templateUrl: 'partials/Login.html',
+        controller: 'GuestHomeController'
+    });
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );
