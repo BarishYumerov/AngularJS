@@ -1,5 +1,9 @@
 'use strict';
 
 app.controller('GuestHomeController',
-    function($scope){
-    });
+    function($scope, $rootScope, $location){
+        if(sessionStorage.currentUser){
+            $location.path('/userHome');
+        }
+    }
+);

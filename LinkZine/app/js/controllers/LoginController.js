@@ -6,11 +6,12 @@ app.controller('LoginController',
             authService.login(userData,
                 function success() {
                     notifyService.showInfo("Login successful");
-                    $location.path("/");
+                    $location.path("/userHome");
                 },
                 function error(err) {
                     notifyService.showError("Login failed", err);
                 }
             );
         };
-    });
+    }
+);
