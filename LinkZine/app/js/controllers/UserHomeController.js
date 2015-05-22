@@ -10,6 +10,7 @@ app.controller('UserHomeController',
 
         userService.getUserData(function(data){
             $scope.loggedUserData = data;
+                console.log($scope.loggedUserData);
             },
             function(err){
                 console.log(err)
