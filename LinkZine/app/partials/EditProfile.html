@@ -1,0 +1,110 @@
+<header ng-include="'partials/UserHomeHeader.html'"></header>
+<div class="registerForm">
+    <div class="col-lg-6">
+        <div class="well bs-component">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>Register</legend>
+                    <div class="form-group">
+                        <label for="username" class="col-lg-2 control-label">Username</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" ng-model="registerUser.Username"
+                                   id="username" placeholder="username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-lg-2 control-label">Password</label>
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control" id="password" ng-model="registerUser.Password"
+                                   placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cofirmPassword" class="col-lg-2 control-label">Confirm Password</label>
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control" ng-model="registerUser.ConfirmPassword"
+                                   id="cofirmPassword" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-lg-2 control-label">Full name</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="name" ng-model="registerUser.Name"
+                                   placeholder="full name"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="email" ng-model="registerUser.Email"
+                                   placeholder="email"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Gender</label>
+                        <div class="col-lg-10">
+                            <div class="radio">
+                                <label class="radio">
+                                    <input type="radio" name="gender" ng-model="registerUser.gender"
+                                           id="male" value="male" checked="">
+                                    Male
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio">
+                                    <input type="radio" name="gender" ng-model="registerUser.gender"
+                                           id="female" value="female">
+                                    Female
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio">
+                                    <input type="radio" name="gender" ng-model="registerUser.gender"
+                                           id="other" value="other">
+                                    Other
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <a href="#/"><button type="reset" class="btn btn-default">Cancel</button></a>
+                            <button type="submit" ng-click="register(registerUser)" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+    </div>
+    <div class="col-lg-4 col-lg-offset-1">
+
+        <form class="bs-component">
+            <div class="form-group">
+                <label for="profileImage" class="col-lg-2 control-label">Profile Picture</label>
+                <div class="col-lg-10">
+                    <div class="profileImage">
+                        <img ng-src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRf_EK2D0i80pbDnsMBBVFyBz_stRah28nTfPZUqNIHntxnTU-N" alt=""/>
+                    </div>
+                    <p>Image Preview</p>
+                    <input type="file" id="profileImage" class="imageUploader"
+                           onchange="angular.element(this).scope().profilePictureSelected(this)" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="profileImage" class="col-lg-2 control-label">Cover Picture</label>
+                <div class="col-lg-10">
+                    <div class="coverImage">
+                        <img ng-src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRf_EK2D0i80pbDnsMBBVFyBz_stRah28nTfPZUqNIHntxnTU-N" alt=""/>
+                    </div>
+                    <p>Image Preview</p>
+                    <input type="file" id="coverImage" class="imageUploader"
+                           onchange="angular.element(this).scope().coverImageSelected(this)" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

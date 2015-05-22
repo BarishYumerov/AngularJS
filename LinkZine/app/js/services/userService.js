@@ -13,6 +13,18 @@ app.factory('userService',
                     sessionStorage.loggedUser = JSON.stringify(data);
                     success(data);
                 }).error(error);
+            },
+
+            changePassword: function(password, success, error){
+                var request = {
+                    method: 'PUT',
+                    url: baseServiceUrl + '/me/changepassword',
+                    headers: authService.getAuthHeaders(),
+                    data: password
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }

@@ -57,6 +57,16 @@ app.controller('UserHomeController',
                 .append(name);
 
             $('#searchResults').append(result);
+        };
+
+
+        $scope.changePassword = function(passwrd){
+            userService.changePassword(passwrd, function(data){
+                    console.log(data);
+                },
+                function(err){
+                    console.log(err)
+                })
         }
     }
 );

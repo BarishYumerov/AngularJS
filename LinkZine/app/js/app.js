@@ -24,6 +24,16 @@ app.config(function ($routeProvider) {
         controller: 'UserHomeController'
     });
 
+    $routeProvider.when('/changePassword', {
+        templateUrl: 'partials/ChangePassword.html',
+        controller: 'UserHomeController'
+    });
+
+    $routeProvider.when('/editProfile', {
+        templateUrl: 'partials/EditProfile.html',
+        controller: 'UserHomeController'
+    });
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );
