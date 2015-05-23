@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('UserHomeController',
-    function($scope, $rootScope, $location, userService, searchService, authService, notifyService){
+    function($scope,$route, $rootScope, $location, userService, searchService, authService, notifyService){
         if(!sessionStorage.currentUser){
             $location.path("/");
         }
@@ -91,7 +91,7 @@ app.controller('UserHomeController',
         $scope.acceptFriendRequest = function(id){
             userService.acceptFriendRequest(id, function(data){
                 console.log(data);
-                    $location.reload();
+                    $rootScope.reload();
             },
             function(err){
                 console.log(err);
