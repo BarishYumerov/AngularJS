@@ -8,4 +8,5 @@
         </div>
         <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
 </div>
-<div id="searchResults" ng-show="isActiveSearch" ></div>
+<div ng-include="'partials/FriendsPreview.html'"></div>
+<div id="searchResults" ng-include="'partials/DynamicSearchResult.html'" ng-show="isActiveSearch" ></div>

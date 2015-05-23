@@ -10,7 +10,7 @@ app.controller('UserHomeController',
 
         userService.getUserData(function(data){
             $scope.loggedUserData = data;
-                console.log($scope.loggedUserData);
+            $scope.friendsPreview = $scope.getMyFriends();
             },
             function(err){
                 console.log(err)
@@ -28,36 +28,20 @@ app.controller('UserHomeController',
 
         $scope.searchByName = function(name){
             $scope.isActiveSearch = true;
-            $('#searchResults').empty();
             if($('#inputSearch').val() == ''){
-                $scope.isActiveSearch = false;
-                if($('#inputSearch')){
-                    $(document).remove($('#inputSearch'));
+                if($('#searchResults')){
+                    $(document).remove($('#searchResults'));
                 }
+                $scope.isActiveSearch = false;
                 return;
             }
             searchService.getUsersByName(name, function(data){
                 $scope.searchResults = data;
-                if($('#inputSearch')){
-                    $(document).remove($('#inputSearch'));
-                }
-                data.forEach(function(person){
-                    $scope.addSeachPerson(person)
-                });
+                    console.log(data);
             },
             function(err){
                 console.log(err);
             })
-        };
-
-        $scope.addSeachPerson = function(person){
-            var result = $('<div class="resultPerson">');
-            var profileImg = $('<img src="' + person.profileImageData +'"/>');
-            var name = $('<p>').html(person.name);
-            result.append(profileImg)
-                .append(name);
-
-            $('#searchResults').append(result);
         };
 
 
@@ -67,6 +51,26 @@ app.controller('UserHomeController',
                 },
                 function(err){
                     console.log(err)
+                })
+        };
+
+        $scope.getMyFriends = function(){
+            userService.getMyFriends(function(data){
+                    $scope.friendsPreview = data;
+                },
+                function(err){
+                    console.log(err)
+                })
+        };
+
+        $scope.sendFriendRequest = function(username){
+            console.log('sending request');
+            userService.sendFriendRequest(username, function(data){
+                    $scope.friendsPreview = data;
+                    console.log(data);
+                },
+                function(err){
+                    console.log(err);
                 })
         }
     }

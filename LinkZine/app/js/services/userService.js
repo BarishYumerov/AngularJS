@@ -15,12 +15,46 @@ app.factory('userService',
                 }).error(error);
             },
 
-            changePassword: function(password, success, error){
+            changePassword: function(userData, success, error){
                 var request = {
                     method: 'PUT',
                     url: baseServiceUrl + '/me/changepassword',
                     headers: authService.getAuthHeaders(),
-                    data: password
+                    data: userData
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
+            },
+
+            editUser: function(userData, success, error){
+                var request = {
+                    method: 'PUT',
+                    url: baseServiceUrl + '/me',
+                    headers: authService.getAuthHeaders(),
+                    data: userData
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
+            },
+
+            getMyFriends: function(success, error){
+                var request = {
+                    method: 'GET',
+                    url: baseServiceUrl + '/me/friends',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
+            },
+
+            sendFriendRequest: function(username, success, error){
+                var request = {
+                    method: 'POST',
+                    url: baseServiceUrl + '/me/requests/' + username,
+                    headers: authService.getAuthHeaders()
                 };
                 $http(request).success(function (data) {
                     success(data);

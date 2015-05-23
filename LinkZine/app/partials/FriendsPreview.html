@@ -1,0 +1,11 @@
+<div class="bs-component">
+    <div class="jumbotron" onclick="searchByName('Pesho')">
+        <h3>Friends</h3>
+        <div class="friends">
+            <div class="friendPreview" ng-repeat="friend in friendsPreview">
+                <img ng-src="{{friend.profileImageData}}" alt=""/>
+                <p>{{friend.name}}</p>
+            </div>
+        </div>
+    </div>
+<div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>

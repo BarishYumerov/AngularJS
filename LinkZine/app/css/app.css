@@ -44,11 +44,16 @@ span{
 	display: inline-block;
 }
 
+#friendsPreview{
+	border: 1px solid #000000;
+	float: right;
+}
+
 #searchResults{
 	display: inline-block;
 	position: absolute;
 	top: 50px;
-	right: 534px;
+	right: 547px;
 	width: 220px;
 	padding: 5px;
 	background-color: #2c3e50;
@@ -83,4 +88,7 @@ i{
 }
 .imageUploader{
 	margin-bottom: 50px;
+}
+.addFriendDynamical{
+
 }
