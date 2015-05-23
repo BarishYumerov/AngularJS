@@ -7,6 +7,7 @@ app.controller('UserHomeController',
         }
 
         $scope.isActiveSearch = false;
+        $scope.isRequestsHovered = false;
 
         userService.getUserData(function(data){
             $scope.loggedUserData = data;
@@ -36,8 +37,7 @@ app.controller('UserHomeController',
                 return;
             }
             searchService.getUsersByName(name, function(data){
-                $scope.searchResults = data;
-                    console.log(data);
+                    $scope.searchResults = data;
             },
             function(err){
                 console.log(err);
@@ -64,9 +64,42 @@ app.controller('UserHomeController',
         };
 
         $scope.sendFriendRequest = function(username){
-            console.log('sending request');
             userService.sendFriendRequest(username, function(data){
                     $scope.friendsPreview = data;
+                    console.log(data);
+                },
+                function(err){
+                    console.log(err);
+                })
+        };
+
+        $scope.getFriendRequests = function(){
+            $scope.isRequestsHovered = true;
+            userService.getFriendRequests(function(data){
+                console.log(data);
+                $scope.requestResults = data;
+            },
+            function(err){
+                console.log(err);
+            })
+        };
+
+        $scope.overFriendRefusts = function(){
+            $scope.isRequestsHovered = false;
+        };
+
+        $scope.acceptFriendRequest = function(id){
+            userService.acceptFriendRequest(id, function(data){
+                console.log(data);
+                    $location.reload();
+            },
+            function(err){
+                console.log(err);
+            })
+        };
+
+        $scope.rejectFriendRequest = function(id){
+            userService.rejectFriendRequest(id, function(data){
                     console.log(data);
                 },
                 function(err){

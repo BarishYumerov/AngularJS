@@ -1,0 +1,6 @@
+<div class="resultRequest" ng-repeat="result in requestResults">
+    <img src="{{result.user.profileImageData}}" width="40px" alt=""/>
+    <p class="requestUserName">{{result.user.name}}</p><br/>
+    <button class="btn btn-success btn-xs" ng-click="acceptFriendRequest(result.id)">Accept</button>
+    <button class="btn btn-danger btn-xs" ng-click="rejectFriendRequest(result.id)">Reject</button>
+</div>

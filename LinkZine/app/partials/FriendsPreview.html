@@ -1,10 +1,10 @@
-<div class="bs-component">
-    <div class="jumbotron" onclick="searchByName('Pesho')">
-        <h3>Friends</h3>
+<div class="bs-component" style="display: inline-block">
+    <div class="jumbotron" style="display: inline-block">
+        <h5>Total friends: {{friendsPreview.totalCount}}</h5>
         <div class="friends">
-            <div class="friendPreview" ng-repeat="friend in friendsPreview">
-                <img ng-src="{{friend.profileImageData}}" alt=""/>
-                <p>{{friend.name}}</p>
+            <div class="friendPreview" ng-repeat="friend in friendsPreview.friends"
+                 ng-style="{'background-image': 'url({{ friend.profileImageData }})'}">
+                <p id="friendPreviewName">{{friend.name}}</p>
             </div>
         </div>
     </div>
