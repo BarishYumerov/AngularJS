@@ -2,7 +2,7 @@
 
 /**
  * web-server.js Borrowed from angularjs.org tutorial
- * modified to allow posting
+ * modified to allow postin
  */
 
 var util = require('util'),
