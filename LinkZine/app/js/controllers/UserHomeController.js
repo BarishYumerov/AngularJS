@@ -67,7 +67,6 @@ app.controller('UserHomeController',
         $scope.sendFriendRequest = function(username){
             userService.sendFriendRequest(username, function(data){
                     $scope.friendsPreview = data;
-                    console.log(data);
                 },
                 function(err){
                     console.log(err);
@@ -77,7 +76,6 @@ app.controller('UserHomeController',
         $scope.getFriendRequests = function(){
             $scope.isRequestsHovered = true;
             userService.getFriendRequests(function(data){
-                console.log(data);
                 $scope.requestResults = data;
             },
             function(err){
@@ -111,7 +109,6 @@ app.controller('UserHomeController',
         $scope.getAllMyFriends = function(){
             userService.getAllMyFriends(function(data){
                 $scope.allMyFriends = data;
-                console.log($scope.allMyFriends.length);
             },
             function(err){console.log(err)})
         }
