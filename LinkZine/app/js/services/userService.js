@@ -106,6 +106,17 @@ app.factory('userService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            getAllMyFriends : function(success, error){
+                var request = {
+                    method: 'GET',
+                    url: baseServiceUrl + '/me/friends',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }

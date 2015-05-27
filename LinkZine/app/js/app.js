@@ -34,6 +34,11 @@ app.config(function ($routeProvider) {
         controller: 'UserHomeController'
     });
 
+    $routeProvider.when('/allFriends', {
+        templateUrl: 'partials/AllFriends.html',
+        controller: 'UserHomeController'
+    });
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );

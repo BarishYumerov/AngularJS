@@ -18,6 +18,25 @@ span{
 	margin: 0px 180px 0px 50px;
 }
 
+.allFriendsPreview{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#allFriendSearchName{
+	display: block;
+	margin-bottom: 10px;
+}
+
+#allFriendSearch{
+	margin: 40px 170px;
+}
+
+blockquote{
+	margin: 10px;
+}
+
 .userName{
 	width: 300px;
 }

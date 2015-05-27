@@ -12,6 +12,7 @@ app.controller('UserHomeController',
         userService.getUserData(function(data){
             $scope.loggedUserData = data;
             $scope.friendsPreview = $scope.getMyFriends();
+            $scope.allMyFriends = $scope.getAllMyFriends();
             },
             function(err){
                 console.log(err)
@@ -105,6 +106,14 @@ app.controller('UserHomeController',
                 function(err){
                     console.log(err);
                 })
+        };
+
+        $scope.getAllMyFriends = function(){
+            userService.getAllMyFriends(function(data){
+                $scope.allMyFriends = data;
+                console.log($scope.allMyFriends.length);
+            },
+            function(err){console.log(err)})
         }
     }
 );
