@@ -6,7 +6,7 @@ app.controller('PostsController',
             postsService.likePost(postId, function(data){
                 console.log(data);
                 var likes = parseInt($('#' + data.postId + ' p').eq(2).html());
-                console.log(likes);
+                $('#' + data.postId + ' a').eq(0)
                 likes = likes + 1;
                 $('#' + data.postId + ' p').eq(2).html(likes);
 
@@ -17,7 +17,6 @@ app.controller('PostsController',
             postsService.dislikePost(postId, function(data){
                 console.log(data);
                 var likes = parseInt($('#' + data.postId + ' p').eq(2).html());
-                console.log(likes);
                 likes = likes - 1;
                 $('#' + data.postId + ' p').eq(2).html(likes);
 

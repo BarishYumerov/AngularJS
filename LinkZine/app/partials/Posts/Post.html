@@ -6,8 +6,8 @@
             <p id="postContent">{{post.postContent}}</p>
             <p class="postInfo">{{post.likesCount}}</p>
             <a href="">
-                <img ng-click=likePost(post.id) ng-hide="post.liked" id="postLike" width="50px" src="https://img1.etsystatic.com/000/0/6152001/il_570xN.215775285.jpg" alt=""/>
-                <img ng-click=dislikePost(post.id) ng-hide="!post.liked" id="postLike" width="50px" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhw75tkr2u9By3IHebeuAVQ5ZcDqcYkOfnUh3bXucDG3Ro-9r0" alt=""/>
+                <img ng-click ="post.liked = !post.liked; likePost(post.id)" ng-hide="post.liked" id="postLike" width="50px" src="https://img1.etsystatic.com/000/0/6152001/il_570xN.215775285.jpg" alt=""/>
+                <img ng-click="post.liked = !post.liked; dislikePost(post.id)" ng-hide="!post.liked" id="postLike" width="50px" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhw75tkr2u9By3IHebeuAVQ5ZcDqcYkOfnUh3bXucDG3Ro-9r0" alt=""/>
             </a>
             <p class="postInfo">{{post.totalCommentsCount}}</p>
             <a href=""><img id="commentsCount" width="50px" src="http://4.bp.blogspot.com/-KMK_7HykDDw/Uvq6PoPwhAI/AAAAAAAAA90/oCyaHIn0Dd8/s1600/transparent.png" alt=""/></a>
