@@ -164,5 +164,21 @@ h5,h6{
 	display: inline-block;
 	width: 700px;
 	margin: 40px;
-	border: 1px solid #000000;
+}
+
+.post{
+	width: 100%;
+}
+
+h2{
+	margin: 10px;
+}
+
+#postAuthorName{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#postContent{
+	margin-top: 10px;
 }

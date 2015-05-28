@@ -3,10 +3,9 @@
     <div class="bs-component">
         <div class="jumbotron" id="friendsWidth">
             <h2>News Feed</h2>
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p><a class="btn btn-primary btn-lg">Learn more</a></p>
         </div>
         <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+    <div id="postsWrapper" ng-include="'partials/Posts/Post.html'"></div>
 </div>
 <div id="friendsPreviewWrapper" ng-include="'partials/FriendsPreview.html'" ng-click="overFriendRefusts()"></div>
 <div id="searchResults" ng-include="'partials/DynamicSearchResult.html'" ng-show="isActiveSearch" ng-click="overFriendRefusts()"></div>

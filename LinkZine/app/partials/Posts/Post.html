@@ -1,7 +1,9 @@
-<div class="post">
-    <div class="col-lg-6">
+<div ng-repeat="post in newsFeed">
+    <div class="col-lg-6 post">
         <div class="well bs-component">
-            <img ng-src="" alt=""/>
+            <img ng-src="{{post.author.profileImageData}}" width="50px" alt=""/>
+            <p id="postAuthorName"><b>{{post.author.name}}</b> at {{post.date}}</p>
+            <p id="postContent">{{post.postContent}}</p>
             <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
         </div>
     </div>
