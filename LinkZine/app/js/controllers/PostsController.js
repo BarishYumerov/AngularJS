@@ -5,9 +5,10 @@ app.controller('PostsController',
         $scope.likePost = function(postId){
             postsService.likePost(postId, function(data){
                 console.log(data);
-                var likes = parseInt($('#postLikesCount').html());
+                var likes = parseInt($('#' + data.postId + ' p').eq(2).html());
+                console.log(likes);
                 likes = likes + 1;
-                $('#postLikesCount').html(likes);
+                $('#' + data.postId + ' p').eq(2).html(likes);
 
             }, function(err){console.log(err)})
         };
@@ -15,9 +16,10 @@ app.controller('PostsController',
         $scope.dislikePost = function(postId){
             postsService.dislikePost(postId, function(data){
                 console.log(data);
-                var likes = parseInt($('#postLikesCount').html());
+                var likes = parseInt($('#' + data.postId + ' p').eq(2).html());
+                console.log(likes);
                 likes = likes - 1;
-                $('#postLikesCount').html(likes);
+                $('#' + data.postId + ' p').eq(2).html(likes);
 
             }, function(err){console.log(err)})
         }
