@@ -120,6 +120,7 @@ app.controller('UserHomeController',
         $scope.getNewsFeed = function() {
             postsService.getNewsFeed($scope.startPostId, function(data){
                     $scope.newsFeed = data;
+                    console.log(data);
                 },
                 function(err){
                     console.log(err);
