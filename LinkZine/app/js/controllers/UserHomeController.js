@@ -1,13 +1,16 @@
 'use strict';
 
 app.controller('UserHomeController',
-    function($scope,$route, $rootScope, $location, userService, searchService, authService, notifyService){
+    function($scope,$route, $rootScope,postsService, $location, userService, searchService, authService, notifyService){
         if(!sessionStorage.currentUser){
             $location.path("/");
         }
 
         $scope.isActiveSearch = false;
         $scope.isRequestsHovered = false;
+        $scope.startPostId = '';
+        $scope.newsFeed = [];
+
 
         userService.getUserData(function(data){
             $scope.loggedUserData = data;
@@ -39,6 +42,7 @@ app.controller('UserHomeController',
             }
             searchService.getUsersByName(name, function(data){
                     $scope.searchResults = data;
+
             },
             function(err){
                 console.log(err);
@@ -111,6 +115,17 @@ app.controller('UserHomeController',
                 $scope.allMyFriends = data;
             },
             function(err){console.log(err)})
-        }
+        };
+
+        $scope.getNewsFeed = function() {
+            postsService.getNewsFeed($scope.startPostId, function(data){
+                    $scope.newsFeed = data;
+                },
+                function(err){
+                    console.log(err);
+                })
+        };
+
+        $scope.getNewsFeed();
     }
 );
