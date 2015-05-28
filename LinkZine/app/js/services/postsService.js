@@ -12,6 +12,28 @@ app.factory('postsService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            likePost: function(postId, success, error){
+                var request = {
+                    method: 'POST',
+                    url: baseServiceUrl + '/Posts/' + postId + '/likes',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
+            },
+
+            dislikePost: function(postId, success, error){
+                var request = {
+                    method: 'DELETE',
+                    url: baseServiceUrl + '/Posts/' + postId + '/likes',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }
