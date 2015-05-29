@@ -1,30 +1,28 @@
-<div>
-    <div ng-repeat="post in newsFeed">
-        <div class="col-lg-6 post">
-            <div class="well bs-component" id="{{post.id}}">
-                <img ng-src="{{post.author.profileImageData}}" width="50px" alt=""/>
-                <p id="postAuthorName"><b>{{post.author.name}}</b> at {{post.date}}</p>
-                <p id="postContent">{{post.postContent}}</p>
-                <p class="postInfo">{{post.likesCount}}</p>
-                <a href="">
-                    <img ng-click ="post.liked = !post.liked; likePost(post.id)" ng-hide="post.liked" id="postLike" width="50px"
-                         src="https://img1.etsystatic.com/000/0/6152001/il_570xN.215775285.jpg" alt=""/>
-                    <img ng-click="post.liked = !post.liked; dislikePost(post.id)" ng-hide="!post.liked" id="postLike" width="50px"
-                         src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhw75tkr2u9By3IHebeuAVQ5ZcDqcYkOfnUh3bXucDG3Ro-9r0" alt=""/>
-                </a>
-                <p class="postInfo">{{post.totalCommentsCount}}</p>
-                <a href=""><img id="commentsCount" width="50px"
-                                src="http://4.bp.blogspot.com/-KMK_7HykDDw/Uvq6PoPwhAI/AAAAAAAAA90/oCyaHIn0Dd8/s1600/transparent.png" alt=""/>
-                </a>
-                <a class="addComment" ng-click=showCommentForm(post.id)>Add comment</a>
-                <div class="addCommentForm" id="commentForm-{{post.id}}">
-                    <textarea class="addCommentContent" name="commentContent" cols="60" ng-model="addCommentContent" rows="2"></textarea>
-                    <input type="button" ng-click="addComment(post.id, addCommentContent)"
-                           class="commentAdd btn btn-primary btn-xs" value="Comment"/>
-                </div>
-                <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
-                <div id="comments" ng-include="'partials/Posts/Comment.html'"></div>
+<div ng-repeat="post in newsFeed">
+    <div class="col-lg-6 post">
+        <div class="well bs-component" id="{{post.id}}">
+            <img ng-src="{{post.author.profileImageData}}" width="50px" alt=""/>
+            <p id="postAuthorName"><b>{{post.author.name}}</b> at {{post.date}}</p>
+            <p id="postContent">{{post.postContent}}</p>
+            <p class="postInfo">{{post.likesCount}}</p>
+            <a href="">
+                <img ng-click ="post.liked = !post.liked; likePost(post.id)" ng-hide="post.liked" id="postLike" width="50px"
+                     src="https://img1.etsystatic.com/000/0/6152001/il_570xN.215775285.jpg" alt=""/>
+                <img ng-click="post.liked = !post.liked; dislikePost(post.id)" ng-hide="!post.liked" id="postLike" width="50px"
+                     src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhw75tkr2u9By3IHebeuAVQ5ZcDqcYkOfnUh3bXucDG3Ro-9r0" alt=""/>
+            </a>
+            <p class="postInfo">{{post.totalCommentsCount}}</p>
+            <a ng-click="getPostComments(post.id)"><img id="commentsCount" width="50px"
+                            src="http://4.bp.blogspot.com/-KMK_7HykDDw/Uvq6PoPwhAI/AAAAAAAAA90/oCyaHIn0Dd8/s1600/transparent.png" alt=""/>
+            </a>
+            <a class="addComment" ng-click=showCommentForm(post.id)>Add comment</a>
+            <div class="addCommentForm" id="commentForm-{{post.id}}">
+                <textarea class="addCommentContent" name="commentContent" cols="60" ng-model="addCommentContent" rows="2"></textarea>
+                <input type="button" ng-click="addComment(post.id, addCommentContent)"
+                       class="commentAdd btn btn-primary btn-xs" value="Comment"/>
             </div>
+            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+            <div id="comments" ng-include="'partials/Posts/Comment.html'"></div>
         </div>
     </div>
 </div>

@@ -39,6 +39,11 @@ app.config(function ($routeProvider) {
         controller: 'UserHomeController'
     });
 
+    $routeProvider.when('/friendRequests', {
+        templateUrl: 'partials/Posts/ShowSinglePost.html',
+        controller: 'UserHomeController'
+    });
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );

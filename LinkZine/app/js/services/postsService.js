@@ -56,6 +56,29 @@ app.factory('postsService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            addComment: function(postId, content, success, error){
+                var request = {
+                    method: 'POST',
+                    url: baseServiceUrl + '/posts/' + postId + '/comments',
+                    headers: authService.getAuthHeaders(),
+                    data: content
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
+            },
+
+            getPostComments: function(postId, success, error){
+                var request = {
+                    method: 'GET',
+                    url: baseServiceUrl + '/posts/' + postId + '/comments',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }
