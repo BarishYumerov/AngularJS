@@ -237,3 +237,18 @@ hr{
 	float: right;
 	margin-right: 5px;
 }
+
+.editCommentForm{
+	display: none;
+}
+
+#cm{
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+.confirmEdit{
+	vertical-align: top;
+	margin-top: 5px;
+	margin-right: 10px;
+}

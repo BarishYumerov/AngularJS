@@ -44,9 +44,10 @@ app.controller('PostsController',
         $scope.likeComment = function(postId, commentId){
             postsService.likeComment(postId, commentId, function(data){
                 console.log(data);
-                var likes = parseInt($('#' + data.commentId + ' p').eq(2).html());
+                var likes = parseInt($('#comment-' + commentId + ' > div p').eq(2).html());
+                console.log(likes);
                 likes = likes + 1;
-                $('#' + data.commentId + ' p').eq(2).html(likes);
+                $('#comment-' + commentId + ' p').eq(2).html(likes);
 
             }, function(err){console.log(err)})
         };
@@ -54,9 +55,9 @@ app.controller('PostsController',
         $scope.dislikeComment = function(postId, commentId){
             postsService.dislikeComment(postId, commentId, function(data){
                 console.log(data);
-                var likes = parseInt($('#' + data.commentId + ' p').eq(2).html());
+                var likes = parseInt($('#comment-' + commentId + '> div p').eq(2).html());
                 likes = likes - 1;
-                $('#' + data.commentId + ' p').eq(2).html(likes);
+                $('#comment-' + commentId + ' p').eq(2).html(likes);
 
             }, function(err){console.log(err)})
         };
@@ -99,14 +100,19 @@ app.controller('PostsController',
         };
 
         $scope.showEditCommentForm = function(commentId){
-            var content = $('comment-' + commentId + ' > div').html();
-            console.log(content);
+            $('#comment-' + commentId + ' > div p').eq(1).css('display', 'none');
+            $('#editCommentForm-' + commentId).css('display', 'block');
         };
 
         $scope.editComment = function(postId, commentId, content){
             var data = {
                 commentContent: content
-            }
+            };
+            postsService.editComment(postId, commentId, data, function(data){
+                console.log(data);
+                $('#editCommentForm-' + commentId).css('display', 'none');
+                $('#comment-' + commentId + ' > div p').eq(1).css('display', 'block').html(data.commentContent);
+            }, function(err){console.log(err)})
         }
     }
 );

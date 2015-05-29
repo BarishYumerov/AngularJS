@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('EditProfileController',
-    function($scope, $rootScope, $location, userService, authService, notifyService){
+    function($scope, $rootScope, postsService, $location, userService, authService, notifyService){
         $scope.editData = {};
 
         $scope.profilePictureSelected = function(fileInputField) {
