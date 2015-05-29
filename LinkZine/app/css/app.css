@@ -168,6 +168,7 @@ h5,h6{
 
 .post{
 	width: 100%;
+	margin-top: 10px;
 }
 
 h2{
@@ -194,12 +195,36 @@ h2{
 	vertical-align: top;
 }
 #commentContent{
-	display: inline-block;
+	display: block;
+	margin-bottom: 0px;
 }
 .commentInfo{
 	display: inline-block;
+	margin-bottom: 0px;
 }
 
 .comment{
+	margin-left: 30px;
 	margin-top: 10px;
+	background-color: #ffffff;
+	padding: 10px;
+}
+hr{
+	color: #ffffff;
+}
+.addComment{
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.addCommentContent{
+	display: inline-block;
+}
+
+.commentAdd{
+	vertical-align: top;
+	margin-left: 10px;
+}
+.addCommentForm{
+	display: none;
 }
