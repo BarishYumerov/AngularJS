@@ -80,6 +80,7 @@ app.controller('UserHomeController',
             $scope.isRequestsHovered = true;
             userService.getFriendRequests(function(data){
                 $scope.requestResults = data;
+                console.log(data);
             },
             function(err){
                 console.log(err);
@@ -93,7 +94,8 @@ app.controller('UserHomeController',
         $scope.acceptFriendRequest = function(id){
             userService.acceptFriendRequest(id, function(data){
                 console.log(data);
-                    $rootScope.reload();
+                    $scope.friendsPreview.totalCount++;
+                    $('#' + id).remove();
             },
             function(err){
                 console.log(err);
@@ -103,6 +105,7 @@ app.controller('UserHomeController',
         $scope.rejectFriendRequest = function(id){
             userService.rejectFriendRequest(id, function(data){
                     console.log(data);
+                    $('#' + id).remove();
                 },
                 function(err){
                     console.log(err);
@@ -127,6 +130,5 @@ app.controller('UserHomeController',
                 })
         };
 
-        $scope.getNewsFeed();
     }
 );

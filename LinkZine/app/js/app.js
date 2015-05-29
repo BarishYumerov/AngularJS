@@ -40,7 +40,7 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when('/friendRequests', {
-        templateUrl: 'partials/Posts/ShowSinglePost.html',
+        templateUrl: 'partials/AllFriendRequests.html',
         controller: 'UserHomeController'
     });
 

@@ -2,13 +2,8 @@
 
 app.controller('PostsController',
     function($scope, $rootScope, $location, postsService, authService, userService, notifyService){
-        $scope.okSaveScroll = false;
-        $(window).on('scroll', function() {
-            if ($scope.okSaveScroll) { // false between $routeChangeStart and $routeChangeSuccess
-                $scope.scrollPos[$location.path()] = $(window).scrollTop();
-                console.log($scope.scrollPos);
-            }
-        });
+
+        $scope.getNewsFeed();
 
         $scope.oldScrollPos = $(document).height();
 
