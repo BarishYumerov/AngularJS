@@ -1,3 +1,17 @@
-<div ng-repeat="comment in ">
-
+<div class="comment" ng-repeat="comment in post.comments">
+    <div class="bs-component" id="{{comment.id}}">
+        <img ng-src="{{comment.author.profileImageData}}" width="35px" alt=""/>
+        <p id="commentAuthorName"><b>{{comment.author.name}}</b> at {{comment.date}}</p><br/>
+        <p id="commentContent">{{comment.commentContent}}</p>
+        <p class="commentInfo">{{comment.likesCount}}</p>
+        <a href="">
+            <img ng-click ="comment.liked = !comment.liked; likeComment(post.id, comment.id)"
+                 ng-hide="comment.liked &&(post.author.isFriend || post.wallOwner.isFriend)"
+                 id="commentLike" width="35px" src="https://img1.etsystatic.com/000/0/6152001/il_570xN.215775285.jpg" alt=""/>
+            <img ng-click="comment.liked = !comment.liked; dislikeComment(post.id, comment.id)"
+                 ng-hide="!comment.liked &&(post.author.isFriend || post.wallOwner.isFriend)"
+                 id="commentLike" width="35px" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhw75tkr2u9By3IHebeuAVQ5ZcDqcYkOfnUh3bXucDG3Ro-9r0" alt=""/>
+        </a>
+        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+    </div>
 </div>

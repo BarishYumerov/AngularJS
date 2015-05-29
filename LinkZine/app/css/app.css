@@ -188,3 +188,18 @@ h2{
 	margin-left: 10px;
 	margin-right: 5px;
 }
+
+#commentAuthorName{
+	display: inline-block;
+	vertical-align: top;
+}
+#commentContent{
+	display: inline-block;
+}
+.commentInfo{
+	display: inline-block;
+}
+
+.comment{
+	margin-top: 10px;
+}

@@ -11,7 +11,6 @@ app.controller('UserHomeController',
         $scope.startPostId = '';
         $scope.newsFeed = [];
 
-
         userService.getUserData(function(data){
             $scope.loggedUserData = data;
             $scope.friendsPreview = $scope.getMyFriends();
@@ -119,8 +118,9 @@ app.controller('UserHomeController',
 
         $scope.getNewsFeed = function() {
             postsService.getNewsFeed($scope.startPostId, function(data){
-                    $scope.newsFeed = data;
-                    console.log(data);
+                    $scope.newsFeed = $scope.newsFeed.concat(data);
+                    console.log($scope.newsFeed);
+                    $scope.startPostId = data[data.length-1].id;
                 },
                 function(err){
                     console.log(err);

@@ -34,6 +34,28 @@ app.factory('postsService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            likeComment: function(postId, commentId, success, error){
+                var request = {
+                    method: 'POST',
+                    url: baseServiceUrl + '/posts/' + postId + '/comments/ ' +commentId + '/likes',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
+            },
+
+            dislikeComment: function(postId, commentId, success, error){
+                var request = {
+                    method: 'DELETE',
+                    url: baseServiceUrl + '/posts/' + postId + '/comments/ ' +commentId + '/likes',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }
