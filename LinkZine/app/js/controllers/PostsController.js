@@ -10,14 +10,18 @@ app.controller('PostsController',
             }
         });
 
+        $scope.oldScrollPos = $(document).height();
 
         $scope.checkScroll = function(){
             $(window).scroll(function() {
                 if($(window).scrollTop() + $(window).height() + 150 >= $(document).height()) {
+                    if($scope.oldScrollPos == $(document).height()){
+                        return;
+                    }
                     $scope.getNewsFeed();
+                    $scope.oldScrollPos = $(document).height();
                 }
             });
-            setTimeout(null, 2000)
         };
 
         setInterval($scope.checkScroll(), 100);
