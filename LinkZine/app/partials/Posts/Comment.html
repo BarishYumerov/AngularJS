@@ -1,5 +1,5 @@
-<div class="comment" ng-repeat="comment in post.comments">
-    <div class="bs-component" id="{{comment.id}}">
+<div class="comment" ng-repeat="comment in post.comments" id="comment-{{comment.id}}">
+    <div class="bs-component" >
         <img ng-src="{{comment.author.profileImageData}}" width="35px" alt=""/>
         <p id="commentAuthorName"><b>{{comment.author.name}}</b> at {{comment.date}}</p><br/>
         <p id="commentContent">{{comment.commentContent}}</p>
@@ -12,6 +12,12 @@
                  ng-hide="!comment.liked &&(post.author.isFriend || post.wallOwner.isFriend)"
                  id="commentLike" width="35px" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhw75tkr2u9By3IHebeuAVQ5ZcDqcYkOfnUh3bXucDG3Ro-9r0" alt=""/>
         </a>
+        <button id="deleteComment" class="btn btn-danger btn-xs" ng-click="deleteComment(post.id, comment.id)"
+ng-show="(post.author.username == loggedUserData.username) || (comment.author.username == loggedUserData.username) ||
+    (post.wallOwner.username == loggedUserData.username)">
+            Delete</button>
+        <button ng-click="showEditCommentForm()" class="btn btn-info btn-xs editComment"
+                ng-show="comment.author.username == loggedUserData.username">Edit</button>
         <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
     </div>
 </div>

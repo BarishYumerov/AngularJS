@@ -79,6 +79,29 @@ app.factory('postsService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            deleteComment: function(postId, commentId, success, error){
+                var request = {
+                    method: 'DELETE',
+                    url: baseServiceUrl + '/posts/' + postId + '/comments/ ' +commentId,
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
+            },
+
+            editComment: function(postId, commentId, data, success, error){
+                var request = {
+                    method: 'PUT',
+                    url: baseServiceUrl + '/posts/' + postId + '/comments/ ' +commentId,
+                    headers: authService.getAuthHeaders(),
+                    data: data
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }

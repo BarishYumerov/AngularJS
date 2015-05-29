@@ -228,3 +228,12 @@ hr{
 .addCommentForm{
 	display: none;
 }
+
+#deleteComment{
+	float: right;
+}
+
+.editComment{
+	float: right;
+	margin-right: 5px;
+}

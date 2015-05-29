@@ -87,5 +87,26 @@ app.controller('PostsController',
                 });
             }, function(err){console.log(err)})
         };
+
+        $scope.deleteComment = function(postId, commentId){
+            postsService.deleteComment(postId, commentId, function(data){
+                console.log(data);
+                var comments = parseInt($('#' + postId + ' p').eq(3).html());
+                comments = comments - 1;
+                $('#' + postId + ' p').eq(3).html(comments);
+                $('#comment-' + commentId).remove();
+            }, function(err){console.log(err)})
+        };
+
+        $scope.showEditCommentForm = function(commentId){
+            var content = $('comment-' + commentId + ' > div').html();
+            console.log(content);
+        };
+
+        $scope.editComment = function(postId, commentId, content){
+            var data = {
+                commentContent: content
+            }
+        }
     }
 );
