@@ -136,16 +136,25 @@ app.controller('UserWallController',
                 $('#editCommentForm-' + commentId).css('display', 'none');
                 $('#comment-' + commentId + ' > div p').eq(1).css('display', 'block').html(data.commentContent);
             }, function(err){console.log(err)})
-        },
+        };
 
         $scope.getUserFriendPreview = function(username){
             userService.getUserFriendPreview(username, function(data){
-                console.log(data);
                 $scope.userFriendsPreview = data;
             }, function(err){console.log(err)})
         };
 
+        $scope.getUserDetailedFriendlist = function(username){
+            userService.getUserDetailedFriendlist(username, function(data){
+                console.log(data)
+            }, function(err){console.log(err)})
+        };
+
         setInterval($scope.checkUserScroll(), 1000);
-        $scope.userFriendsPreview = $scope.getUserFriendPreview($scope.userWallData.username);
+
+        if($scope.userWallData.isFriend){
+            $scope.userFriendsPreview = $scope.getUserFriendPreview($scope.userWallData.username);
+            $scope.userAllFriends = $scope.getUserDetailedFriendlist($scope.userWallData.username);
+        }
     }
 );

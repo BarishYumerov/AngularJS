@@ -1,0 +1,18 @@
+<header ng-include="'partials/UserHomeHeader.html'" ng-click="overFriendRefusts()"></header>
+<blockquote><h1>My Friends (Total: {{userAllFriends.length}})</h1></blockquote>
+<div id="allFriendSearch">
+    <label for="allFriendSearchName">Name filter</label>
+    <input id="allFriendSearchName" type="text" ng-model="filterName"/>
+    <div class="bs-component" style="display: inline-block">
+        <div class="jumbotron" style="display: inline-block">
+            <div class="allFriendsPreview">
+                <div class="friendPreview" ng-repeat="friend in userAllFriends | filter : filterName"
+                     ng-style="{'background-image': 'url({{ friend.profileImageData }})'}">
+                    <p id="friendPreviewName">{{friend.name}}</p>
+                </div>
+            </div>
+        </div>
+        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+</div>
+<div id="searchResults" ng-include="'partials/DynamicSearchResult.html'" ng-show="isActiveSearch" ng-click="overFriendRefusts()"></div>
+<div id="requestResults" ng-include="'partials/FriendRequests.html'" ng-show="isRequestsHovered" ng-click="overFriendRefusts()"></div>

@@ -128,6 +128,17 @@ app.factory('userService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            getUserDetailedFriendlist: function(username, success, error){
+                var request = {
+                    method: 'GET',
+                    url: baseServiceUrl + '/users/' + username + '/friends',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }

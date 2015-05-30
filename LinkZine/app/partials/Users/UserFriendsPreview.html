@@ -1,6 +1,7 @@
 <div class="bs-component" style="display: inline-block">
     <div class="jumbotron" style="display: inline-block">
-        <h5><a href="#/allFriends" ng-click="getAllMyFriends()">Total friends: {{userFriendsPreview.totalCount}}</a></h5>
+        <h5><a href="#/users/{{userWallData.username}}/friends" ng-click="getUserDetailedFriendlist(userWallData.username)">
+            Total friends: {{userFriendsPreview.totalCount}}</a></h5>
         <div class="friends">
             <div class="friendPreview" ng-repeat="friend in userFriendsPreview.friends"
                  ng-style="{'background-image': 'url({{ friend.profileImageData }})'}">
