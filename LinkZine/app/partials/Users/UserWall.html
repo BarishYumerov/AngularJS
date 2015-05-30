@@ -23,6 +23,10 @@
             </div>
             <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
         <div id="postsWrapper" ng-include="'partials/Posts/userPosts.html'"></div>
+        <div class="animatedGif">
+            <img width="60px" src="http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif" alt=""/>
+            <p style="display: inline-block">Loading please wait.</p>
+        </div>
     </div>
     <div ng-hide="!userWallData.isFriend"
          id="friendsPreviewWrapper" ng-include="'partials/Users/UserFriendsPreview.html'" ng-click="overFriendRefusts()">

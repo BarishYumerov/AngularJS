@@ -6,6 +6,10 @@
         </div>
         <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
     <div id="postsWrapper" ng-include="'partials/Posts/Post.html'"></div>
+    <div class="animatedGif">
+        <img width="60px" src="http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif" alt=""/>
+        <p style="display: inline-block">Loading please wait.</p>
+    </div>
 </div>
 <div id="friendsPreviewWrapper" ng-include="'partials/FriendsPreview.html'" ng-click="overFriendRefusts()"></div>
 <div id="searchResults" ng-include="'partials/DynamicSearchResult.html'" ng-show="isActiveSearch" ng-click="overFriendRefusts()"></div>
