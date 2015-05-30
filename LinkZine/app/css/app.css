@@ -93,6 +93,11 @@ i{
 	padding: 3px;
 	margin-bottom: 5px;
 	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.dynamicSearchName{
+	text-decoration: underline;
 }
 
 #searchResults img{
@@ -282,4 +287,8 @@ hr{
 }
 .userFriendInfoButton{
 	margin-left: 20px;
+}
+
+#friendsPreviewWrapper{
+	margin-top: 20px;
 }

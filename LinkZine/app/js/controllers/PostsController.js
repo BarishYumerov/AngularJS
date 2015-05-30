@@ -26,7 +26,7 @@ app.controller('PostsController',
                 console.log(data);
                 var likes = parseInt($('#' + data.postId + ' p').eq(2).html());
                 likes = likes + 1;
-                $('#' + data.postId + ' p').eq(2).html(likes);
+                $('#' + data.postId + ' p').eq(2).html(likes  + ' likes');
 
             }, function(err){console.log(err)})
         };
@@ -36,7 +36,7 @@ app.controller('PostsController',
                 console.log(data);
                 var likes = parseInt($('#' + data.postId + ' p').eq(2).html());
                 likes = likes - 1;
-                $('#' + data.postId + ' p').eq(2).html(likes);
+                $('#' + data.postId + ' p').eq(2).html(likes + ' likes');
 
             }, function(err){console.log(err)})
         };
@@ -47,7 +47,7 @@ app.controller('PostsController',
                 var likes = parseInt($('#comment-' + commentId + ' > div p').eq(2).html());
                 console.log(likes);
                 likes = likes + 1;
-                $('#comment-' + commentId + ' p').eq(2).html(likes);
+                $('#comment-' + commentId + ' p').eq(2).html(likes + ' likes');
 
             }, function(err){console.log(err)})
         };
@@ -57,7 +57,7 @@ app.controller('PostsController',
                 console.log(data);
                 var likes = parseInt($('#comment-' + commentId + '> div p').eq(2).html());
                 likes = likes - 1;
-                $('#comment-' + commentId + ' p').eq(2).html(likes);
+                $('#comment-' + commentId + ' p').eq(2).html(likes + ' likes');
 
             }, function(err){console.log(err)})
         };

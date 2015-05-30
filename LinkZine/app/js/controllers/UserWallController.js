@@ -27,6 +27,7 @@ app.controller('UserWallController',
         $scope.getUserNewsFeed = function() {
             postsService.getUserNewsFeed($scope.userWallData.username, $scope.startUserPostId, function(data){
                     $scope.userNewsFeed = $scope.userNewsFeed.concat(data);
+                    console.log(data);
                     $scope.startUserPostId = data[data.length-1].id;
                 },
                 function(err){
@@ -49,7 +50,7 @@ app.controller('UserWallController',
                 console.log(data);
                 var likes = parseInt($('#' + data.postId + ' p').eq(2).html());
                 likes = likes + 1;
-                $('#' + data.postId + ' p').eq(2).html(likes);
+                $('#' + data.postId + ' p').eq(2).html(likes + ' likes');
 
             }, function(err){console.log(err)})
         };
@@ -59,7 +60,7 @@ app.controller('UserWallController',
                 console.log(data);
                 var likes = parseInt($('#' + data.postId + ' p').eq(2).html());
                 likes = likes - 1;
-                $('#' + data.postId + ' p').eq(2).html(likes);
+                $('#' + data.postId + ' p').eq(2).html(likes + ' likes');
 
             }, function(err){console.log(err)})
         };
@@ -70,7 +71,7 @@ app.controller('UserWallController',
                 var likes = parseInt($('#comment-' + commentId + ' > div p').eq(2).html());
                 console.log(likes);
                 likes = likes + 1;
-                $('#comment-' + commentId + ' p').eq(2).html(likes);
+                $('#comment-' + commentId + ' p').eq(2).html(likes  + ' likes');
 
             }, function(err){console.log(err)})
         };
@@ -80,7 +81,7 @@ app.controller('UserWallController',
                 console.log(data);
                 var likes = parseInt($('#comment-' + commentId + '> div p').eq(2).html());
                 likes = likes - 1;
-                $('#comment-' + commentId + ' p').eq(2).html(likes);
+                $('#comment-' + commentId + ' p').eq(2).html(likes  + ' likes');
 
             }, function(err){console.log(err)})
         };
@@ -146,7 +147,8 @@ app.controller('UserWallController',
 
         $scope.getUserDetailedFriendlist = function(username){
             userService.getUserDetailedFriendlist(username, function(data){
-                console.log(data)
+                console.log(data);
+                $scope.userAllFriends = data;
             }, function(err){console.log(err)})
         };
 
