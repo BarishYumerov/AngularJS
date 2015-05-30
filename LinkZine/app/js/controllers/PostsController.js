@@ -45,9 +45,7 @@ app.controller('PostsController',
 
         $scope.likeComment = function(postId, commentId){
             postsService.likeComment(postId, commentId, function(data){
-                console.log(data);
                 var likes = parseInt($('#comment-' + commentId + ' > div p').eq(2).html());
-                console.log(likes);
                 likes = likes + 1;
                 $('#comment-' + commentId + ' p').eq(2).html(likes + ' likes');
 

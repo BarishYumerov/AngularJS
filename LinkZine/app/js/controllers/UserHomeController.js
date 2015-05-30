@@ -5,6 +5,8 @@ app.controller('UserHomeController',
         if(!sessionStorage.currentUser){
             $location.path("/");
         }
+        
+        $(document).on('click', function(){$('#userPreview').remove()});
 
         $scope.isActiveSearch = false;
         $scope.isRequestsHovered = false;
@@ -142,19 +144,20 @@ app.controller('UserHomeController',
                 var info = $('<div id="userPreview">' +
                 '<img src="' + data.profileImageData + '" alt=""/> <p>' + data.name +'</p>' +
                 '</div>');
-                var btn1
+                var btn1;
                 if(data.isFriend){
                     btn1 = $('<button class="btn btn-success btn-xs">Friend</button>')
                 }
-                else if(data.hasPendingRequest){
+                else if(data.hasPendingRequest && data.username != $scope.loggedUserData.username){
                     btn1 = $('<button class="btn btn-warning btn-xs">Pending</button>')
                 }
-                else{
+                else if(data.username != $scope.loggedUserData.username){
                     btn1 = $('<button class="btn btn-info btn-xs">Invite</button>')
                 }
                 info.css('left', $event.x);
                 info.css('top', $event.y + $(window).scrollTop());
                 info.append(btn1);
+                $('#userPreview').mouseleave(function(){$('#userPreview').remove()});
                 $('body').append(info);
             }, function(err){console.log(err)})
         };

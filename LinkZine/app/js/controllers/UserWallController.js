@@ -5,6 +5,7 @@ app.controller('UserWallController',
         if(!sessionStorage.currentUser){
             $location.path("/");
         }
+        $(document).on('click', function(){$('#userPreview').remove()});
 
         $scope.userWallData = JSON.parse(sessionStorage.userWallData);
         $scope.startUserPostId = '';

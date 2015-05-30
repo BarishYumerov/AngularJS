@@ -6,7 +6,8 @@
         <p id="userFullName">{{userWallData.name}}</p>
         <button ng-show="!userWallData.isFriend && !userWallData.hasPendingRequest && userWallData.username != loggedUserData.username"
                 class="userFriendInfoButton btn btn-primary btn-xs" ng-click="sendFriendRequest(userWallData.username)">Add Friend</button>
-        <button ng-show="userWallData.hasPendingRequest" class="btn btn-info btn-xs userFriendInfoButton">Pending Request</button>
+        <button ng-show="userWallData.hasPendingRequest && userWallData.username != loggedUserData.username"
+                class="btn btn-info btn-xs userFriendInfoButton">Pending Request</button>
         <button ng-show="userWallData.isFriend" class="btn btn-success btn-xs userFriendInfoButton">Friend</button>
     </div>
 
