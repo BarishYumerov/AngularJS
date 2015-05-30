@@ -114,6 +114,6 @@ app.controller('PostsController',
                 $('#editCommentForm-' + commentId).css('display', 'none');
                 $('#comment-' + commentId + ' > div p').eq(1).css('display', 'block').html(data.commentContent);
             }, function(err){console.log(err)})
-        }
+        };
     }
 );

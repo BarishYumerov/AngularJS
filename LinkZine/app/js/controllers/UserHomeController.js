@@ -5,7 +5,7 @@ app.controller('UserHomeController',
         if(!sessionStorage.currentUser){
             $location.path("/");
         }
-        
+
         $(document).on('click', function(){$('#userPreview').remove()});
 
         $scope.isActiveSearch = false;
@@ -159,6 +159,13 @@ app.controller('UserHomeController',
                 info.append(btn1);
                 $('#userPreview').mouseleave(function(){$('#userPreview').remove()});
                 $('body').append(info);
+            }, function(err){console.log(err)})
+        };
+
+        $scope.deletePost = function(postId){
+            postsService.deletePost(postId, function(data){
+                console.log(data);
+                $('#' + postId).remove();
             }, function(err){console.log(err)})
         };
 

@@ -20,7 +20,11 @@
             </a>
             <a ng-show="post.author.isFriend || post.wallOwner.isFriend || post.wallOwner.username == loggedUserData.username
             || post.author.username == loggedUserData.username" class="addComment" ng-click=showCommentForm(post.id)>
-                Add comment</a>
+                Add comment
+            </a>
+            <button ng-show="post.author.username == loggedUserData.username || post.wallOwner.username == loggedUserData.username"
+                    class="btn btn-danger btn-xs deletePost" ng-click="deletePost(post.id)">Delete Post
+            </button>
             <div class="addCommentForm" id="commentForm-{{post.id}}">
                 <textarea class="addCommentContent" name="commentContent" cols="60" ng-model="addCommentContent" rows="2"></textarea>
                 <input type="button" ng-click="addComment(post.id, addCommentContent)"

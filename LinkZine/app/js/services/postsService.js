@@ -125,6 +125,17 @@ app.factory('postsService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            deletePost: function(postId, success, error){
+                var request = {
+                    method: 'DELETE',
+                    url: baseServiceUrl + '/Posts/' + postId,
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }

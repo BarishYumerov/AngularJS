@@ -196,6 +196,13 @@ app.controller('UserWallController',
             })
         };
 
+        $scope.deletePost = function(postId){
+            postsService.deletePost(postId, function(data){
+                console.log(data);
+                $('#' + postId).remove();
+            }, function(err){console.log(err)})
+        };
+
         setInterval($scope.checkUserScroll(), 1000);
 
         if($scope.userWallData.isFriend){
