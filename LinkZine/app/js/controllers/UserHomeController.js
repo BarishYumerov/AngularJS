@@ -41,6 +41,13 @@ app.controller('UserHomeController',
                 return;
             }
             searchService.getUsersByName(name, function(data){
+                    data.forEach(function(user){
+                        if(!user.profileImageData){
+                            user.profileImageData = 'http://www.balaniinfotech.com/wp-content/themes/balani/images/noimage.jpg';
+                        }
+                    });
+
+                    console.log(data);
                     $scope.searchResults = data;
 
             },
@@ -127,6 +134,29 @@ app.controller('UserHomeController',
                 sessionStorage.userWallData = JSON.stringify(data);
                 $location.path("/users/" + data.username);
             }, function(err){console.log(err)});
+        };
+
+        $scope.getUserPreview = function($event, username){
+            userService.getUserPreview(username, function(data){
+                $('#userPreview').remove();
+                var info = $('<div id="userPreview">' +
+                '<img src="' + data.profileImageData + '" alt=""/> <p>' + data.name +'</p>' +
+                '</div>');
+                var btn1
+                if(data.isFriend){
+                    btn1 = $('<button class="btn btn-success btn-xs">Friend</button>')
+                }
+                else if(data.hasPendingRequest){
+                    btn1 = $('<button class="btn btn-warning btn-xs">Pending</button>')
+                }
+                else{
+                    btn1 = $('<button class="btn btn-info btn-xs">Invite</button>')
+                }
+                info.css('left', $event.x);
+                info.css('top', $event.y + $(window).scrollTop());
+                info.append(btn1);
+                $('body').append(info);
+            }, function(err){console.log(err)})
         };
 
         $scope.logData = function(user){

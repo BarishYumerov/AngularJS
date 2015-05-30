@@ -5,7 +5,8 @@
         </div>
 
         <ul class="nav navbar-nav">
-            <li class="userName"><a href="#/" class="imgProfile profileImg"><img ng-src="{{loggedUserData.profileImageData}}" width="30" ng-click="logout()"/>
+            <li class="userName"><a href="#/users/{{loggedUserdata.username}}" class="imgProfile profileImg">
+                <img ng-src="{{loggedUserData.profileImageData}}" width="30" ng-click="logout()"/>
                 <i>{{loggedUserData.name}}</i>
             </a></li>
             <li class="search">

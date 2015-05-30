@@ -1,7 +1,7 @@
 <div class="comment" ng-repeat="comment in post.comments" id="comment-{{comment.id}}">
     <div class="bs-component" >
         <img ng-src="{{comment.author.profileImageData}}" width="35px" alt=""/>
-        <p id="commentAuthorName"><b>{{comment.author.name}}</b> at {{comment.date}}</p><br/>
+        <p id="commentAuthorName" ><b ng-mouseover="getUserPreview($event, comment.author.username)" >{{comment.author.name}}</b> at {{comment.date}}</p><br/>
         <p id="commentContent">{{comment.commentContent}}</p>
         <div id="editCommentForm-{{comment.id}}" class="editCommentForm">
             <textarea id="cm" cols="60" rows="2" ng-model="editCommentContent" placeholder="{{comment.commentContent}}"></textarea>

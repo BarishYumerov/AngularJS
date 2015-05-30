@@ -2,7 +2,7 @@
     <div class="col-lg-6 post">
         <div class="well bs-component" id="{{post.id}}">
             <img ng-src="{{post.author.profileImageData}}" width="50px" alt=""/>
-            <p id="postAuthorName"><b><u>{{post.author.name}}</u></b> at {{post.date}}</p>
+            <p id="postAuthorName"><b><u ng-mouseover="getUserPreview($event, post.author.username)" >{{post.author.name}}</u></b> at {{post.date}}</p>
             <p id="postContent">{{post.postContent}}</p>
             <p class="postInfo">{{post.likesCount}} likes</p>
             <a href="">
@@ -12,7 +12,7 @@
                      src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRhw75tkr2u9By3IHebeuAVQ5ZcDqcYkOfnUh3bXucDG3Ro-9r0" alt=""/>
             </a>
             <p class="postInfo">{{post.totalCommentsCount}}</p>
-            <a ng-click="getPostComments(post.id)"><img id="commentsCount" width="50px"
+            <a ng-click="getPostComments(post.id)"><img class="commentsCount" width="50px"
                             src="http://4.bp.blogspot.com/-KMK_7HykDDw/Uvq6PoPwhAI/AAAAAAAAA90/oCyaHIn0Dd8/s1600/transparent.png" alt=""/>
             </a>
             <a class="addComment" ng-click=showCommentForm(post.id)>Add comment</a>
