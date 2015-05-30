@@ -44,6 +44,11 @@ app.config(function ($routeProvider) {
         controller: 'UserHomeController'
     });
 
+    $routeProvider.when('/users/:username', {
+        templateUrl: 'partials/Users/UserWall.html',
+        controller: 'UserHomeController'
+    });
+
     $routeProvider.otherwise(
         { redirectTo: '/' }
     );

@@ -10,6 +10,7 @@ app.controller('UserHomeController',
         $scope.isRequestsHovered = false;
         $scope.startPostId = '';
         $scope.newsFeed = [];
+        $scope.userWallData = {};
 
         userService.getUserData(function(data){
             $scope.loggedUserData = data;
@@ -67,15 +68,6 @@ app.controller('UserHomeController',
                 })
         };
 
-        $scope.sendFriendRequest = function(username){
-            userService.sendFriendRequest(username, function(data){
-                    $scope.friendsPreview = data;
-                },
-                function(err){
-                    console.log(err);
-                })
-        };
-
         $scope.getFriendRequests = function(){
             $scope.isRequestsHovered = true;
             userService.getFriendRequests(function(data){
@@ -130,5 +122,16 @@ app.controller('UserHomeController',
                 })
         };
 
+        $scope.getUserFullData = function(username){
+            userService.getUserFullData(username, function(data){
+                $scope.userWallData = data;
+                sessionStorage.userWallData = JSON.stringify(data);
+                $location.path("/users/" + data.username);
+            }, function(err){console.log(err)});
+        };
+
+        $scope.logData = function(user){
+            console.log(user);
+        }
     }
 );

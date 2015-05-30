@@ -1,5 +1,7 @@
-<div class="resultPerson" ng-repeat="result in searchResults">
-    <img src="{{result.profileImageData}}" alt=""/>
-    <p>{{result.name}}</p>
-    <button class="btn btn-primary btn-xs" ng-click="sendFriendRequest(result.username)">Add</button>
+<div class="resultPerson" ng-repeat="result in searchResults" id="search-{{result.username}}">
+    <a ng-click="getUserFullData(result.username)">
+        <img src="{{result.profileImageData}}" alt=""/>
+        <p>{{result.name}}</p>
+        <button class="btn btn-primary btn-xs" ng-click="sendFriendRequest(result.username)">Add</button>
+    </a>
 </div>
