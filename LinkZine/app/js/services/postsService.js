@@ -102,6 +102,17 @@ app.factory('postsService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            getUserNewsFeed: function (username, startPostId, success, error) {
+                var request = {
+                    method: 'GET',
+                    url: baseServiceUrl + '/users/' + username + '/wall?StartPostId= ' + startPostId + ' &PageSize=5',
+                    headers: authService.getAuthHeaders()
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }

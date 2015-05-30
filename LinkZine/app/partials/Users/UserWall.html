@@ -1,22 +1,23 @@
 <header ng-include="'partials/UserHomeHeader.html'" ng-click="overFriendRefusts()"></header>
+<div ng-controller="UserWallController">
+    <div id="userHeader"  ng-style="{'background-image': 'url({{ userWallData.coverImageData }})'}">
+        <div id="userProfileImg" ng-style="{'background-image': 'url({{ userWallData.profileImageData }})'}"></div>
+        <p id="userFullName">{{userWallData.name}}</p>
+        <button ng-show="!userWallData.isFriend && !userWallData.hasPendingRequest"
+                class="userFriendInfoButton btn btn-primary btn-xs" ng-click="sendFriendRequest(userWallData.username)">Add Friend</button>
+        <button ng-show="userWallData.hasPendingRequest" class="btn btn-info btn-xs userFriendInfoButton">Pending Request</button>
+        <button ng-show="userWallData.isFriend" class="btn btn-success btn-xs userFriendInfoButton">Friend</button>
+    </div>
 
-<div id="userHeader" ng-controller="UserWallController" ng-style="{'background-image': 'url({{ userWallData.coverImageData }})'}">
-    <div id="userProfileImg" ng-style="{'background-image': 'url({{ userWallData.profileImageData }})'}"></div>
-    <p id="userFullName">{{userWallData.name}}</p>
-    <button ng-show="!userWallData.isFriend && !userWallData.hasPendingRequest"
-            class="userFriendInfoButton btn btn-primary btn-xs" ng-click="sendFriendRequest(userWallData.username)">Add Friend</button>
-    <button ng-show="userWallData.hasPendingRequest" class="btn btn-info btn-xs userFriendInfoButton">Pending Request</button>
-    <button ng-show="userWallData.isFriend" class="btn btn-success btn-xs userFriendInfoButton">Friend</button>
+    <div id="newsFeed"  class="col-lg-12" ng-click="overFriendRefusts()">
+        <div class="bs-component">
+            <div class="jumbotron" id="friendsWidth">
+                <h2>{{userWallData.username}}'s News Feed</h2>
+            </div>
+            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+        <div id="postsWrapper" ng-include="'partials/Posts/userPosts.html'"></div>
+    </div>
+    <div ng-hide="!userWallData.isFriend" id="friendsPreviewWrapper" ng-include="'partials/Users/UserFriendsPreview.html'" ng-click="overFriendRefusts()"></div>
 </div>
-
-<div id="newsFeed"  class="col-lg-12" ng-click="overFriendRefusts()">
-    <div class="bs-component">
-        <div class="jumbotron" id="friendsWidth">
-            <h2>News Feed</h2>
-        </div>
-        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
-    <div id="postsWrapper" ng-include="'partials/Posts/Post.html'"></div>
-</div>
-<div id="friendsPreviewWrapper" ng-include="'partials/FriendsPreview.html'" ng-click="overFriendRefusts()"></div>
 <div id="searchResults" ng-include="'partials/DynamicSearchResult.html'" ng-show="isActiveSearch" ng-click="overFriendRefusts()"></div>
 <div id="requestResults" ng-include="'partials/FriendRequests.html'" ng-show="isRequestsHovered" ng-click="overFriendRefusts()"></div>

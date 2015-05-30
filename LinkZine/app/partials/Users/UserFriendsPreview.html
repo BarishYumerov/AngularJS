@@ -1,0 +1,11 @@
+<div class="bs-component" style="display: inline-block">
+    <div class="jumbotron" style="display: inline-block">
+        <h5><a href="#/allFriends" ng-click="getAllMyFriends()">Total friends: {{userFriendsPreview.totalCount}}</a></h5>
+        <div class="friends">
+            <div class="friendPreview" ng-repeat="friend in userFriendsPreview.friends"
+                 ng-style="{'background-image': 'url({{ friend.profileImageData }})'}">
+                <p id="friendPreviewName">{{friend.name}}</p>
+            </div>
+        </div>
+    </div>
+    <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
