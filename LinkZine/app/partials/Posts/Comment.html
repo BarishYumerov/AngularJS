@@ -9,7 +9,8 @@
             class="confirmEdit btn btn-success btn-xs">Edit</button>
         </div>
         <p class="commentInfo">{{comment.likesCount}} likes</p>
-        <a href="" ng-show="post.author.isFriend || post.wallOwner.isFriend">
+        <a href="" ng-show="post.author.isFriend || post.wallOwner.isFriend || post.wallOwner.username == loggedUserData.username
+            || post.author.username == loggedUserData.username">
             <img ng-click ="comment.liked = !comment.liked; likeComment(post.id, comment.id)"
                  ng-hide="comment.liked &&(post.author.isFriend || post.wallOwner.isFriend)"
                  id="commentLike" width="35px" src="https://img1.etsystatic.com/000/0/6152001/il_570xN.215775285.jpg" alt=""/>

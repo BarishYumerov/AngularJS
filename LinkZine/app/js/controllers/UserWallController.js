@@ -2,6 +2,10 @@
 
 app.controller('UserWallController',
     function($scope, userService, postsService, $rootScope, $location, authService, notifyService){
+        if(!sessionStorage.currentUser){
+            $location.path("/");
+        }
+
         $scope.userWallData = JSON.parse(sessionStorage.userWallData);
         $scope.startUserPostId = '';
         $scope.userNewsFeed = [];
@@ -151,6 +155,18 @@ app.controller('UserWallController',
                 $scope.userAllFriends = data;
             }, function(err){console.log(err)})
         };
+
+        $scope.postPost = function(username, postContent){
+            var data = {
+                postContent: postContent,
+                username: username
+            };
+            postsService.postPost(data, function(data){
+                console.log(data);
+            }, function(err){
+                console.log(err);
+            })
+        }
 
         setInterval($scope.checkUserScroll(), 1000);
 

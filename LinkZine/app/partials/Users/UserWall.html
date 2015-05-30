@@ -1,9 +1,10 @@
 <header ng-include="'partials/UserHomeHeader.html'" ng-click="overFriendRefusts()"></header>
 <div ng-controller="UserWallController">
+
     <div id="userHeader"  ng-style="{'background-image': 'url({{ userWallData.coverImageData }})'}">
         <div id="userProfileImg" ng-style="{'background-image': 'url({{ userWallData.profileImageData }})'}"></div>
         <p id="userFullName">{{userWallData.name}}</p>
-        <button ng-show="!userWallData.isFriend && !userWallData.hasPendingRequest"
+        <button ng-show="!userWallData.isFriend && !userWallData.hasPendingRequest && userWallData.username != loggedUserData.username"
                 class="userFriendInfoButton btn btn-primary btn-xs" ng-click="sendFriendRequest(userWallData.username)">Add Friend</button>
         <button ng-show="userWallData.hasPendingRequest" class="btn btn-info btn-xs userFriendInfoButton">Pending Request</button>
         <button ng-show="userWallData.isFriend" class="btn btn-success btn-xs userFriendInfoButton">Friend</button>
@@ -13,6 +14,11 @@
         <div class="bs-component">
             <div class="jumbotron" id="friendsWidth">
                 <h2>{{userWallData.name}}'s News Feed</h2>
+            </div>
+            <div ng-show="userWallData.isFriend || userWallData.username == loggedUserData.username" id="postPost">
+                <p>Post message to {{userWallData.name}}'s wall: </p>
+                <textarea ng-model="postPostContent"  cols="60" rows="2"></textarea>
+                <button ng-click="postPost(userWallData.username, postPostContent)" class="btn btn-success btn-xs postPostButton">Post</button>
             </div>
             <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
         <div id="postsWrapper" ng-include="'partials/Posts/userPosts.html'"></div>

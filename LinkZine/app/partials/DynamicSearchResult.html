@@ -1,5 +1,6 @@
-<div class="resultPerson" ng-repeat="result in searchResults" id="search-{{result.username}}">
-    <a ng-click="getUserFullData(result.username)">
+<div class="resultPerson" ng-repeat="result in searchResults" id="search-{{result.username}}"
+     ng-click="getUserFullData(result.username)">
+    <a>
         <img src="{{result.profileImageData}}" alt=""/>
         <p class="dynamicSearchName">{{result.name}}</p>
     </a>

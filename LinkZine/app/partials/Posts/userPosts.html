@@ -5,7 +5,8 @@
             <p id="postAuthorName"><b><u>{{post.author.name}}</u></b> at {{post.date}}</p>
             <p id="postContent">{{post.postContent}}</p>
             <p class="postInfo">{{post.likesCount}} likes</p>
-            <a href="" ng-show="post.author.isFriend || post.wallOwner.isFriend">
+            <a href="" ng-show="post.author.isFriend || post.wallOwner.isFriend || post.wallOwner.username == loggedUserData.username
+            || post.author.username == loggedUserData.username">
                 <img ng-hide="post.liked"
                      ng-click ="post.liked = !post.liked; likePost(post.id)" ng-hide="post.liked" id="postLike" width="50px"
                      src="https://img1.etsystatic.com/000/0/6152001/il_570xN.215775285.jpg" alt=""/>
@@ -17,7 +18,8 @@
             <a ng-click="getPostComments(post.id)"><img id="commentsCount" width="50px"
                 src="http://4.bp.blogspot.com/-KMK_7HykDDw/Uvq6PoPwhAI/AAAAAAAAA90/oCyaHIn0Dd8/s1600/transparent.png" alt=""/>
             </a>
-            <a ng-show="post.author.isFriend || post.wallOwner.isFriend" class="addComment" ng-click=showCommentForm(post.id)>
+            <a ng-show="post.author.isFriend || post.wallOwner.isFriend || post.wallOwner.username == loggedUserData.username
+            || post.author.username == loggedUserData.username" class="addComment" ng-click=showCommentForm(post.id)>
                 Add comment</a>
             <div class="addCommentForm" id="commentForm-{{post.id}}">
                 <textarea class="addCommentContent" name="commentContent" cols="60" ng-model="addCommentContent" rows="2"></textarea>

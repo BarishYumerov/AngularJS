@@ -2,7 +2,9 @@
 
 app.controller('PostsController',
     function($scope, $rootScope, $location, postsService, authService, userService, notifyService){
-
+        if(!sessionStorage.currentUser){
+            $location.path("/");
+        }
         $scope.getNewsFeed();
 
         $scope.oldScrollPos = $(document).height();

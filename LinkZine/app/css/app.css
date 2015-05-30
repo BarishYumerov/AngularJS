@@ -288,7 +288,17 @@ hr{
 .userFriendInfoButton{
 	margin-left: 20px;
 }
+textarea{
+	resize: none;
+}
 
 #friendsPreviewWrapper{
 	margin-top: 20px;
 }
+
+.postPostButton{
+	vertical-align: top;
+}
+
+#postPost{
+ }

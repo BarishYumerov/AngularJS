@@ -113,6 +113,18 @@ app.factory('postsService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            postPost: function(data, success, error){
+                var request = {
+                    method: 'POST',
+                    url: baseServiceUrl + '/posts',
+                    headers: authService.getAuthHeaders(),
+                    data: data
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }

@@ -2,6 +2,10 @@
 
 app.controller('EditProfileController',
     function($scope, $rootScope, postsService, $location, userService, authService, notifyService){
+        if(!sessionStorage.currentUser){
+            $location.path("/");
+        }
+
         $scope.editData = {};
 
         $scope.profilePictureSelected = function(fileInputField) {
