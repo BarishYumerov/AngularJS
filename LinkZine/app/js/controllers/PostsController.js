@@ -78,6 +78,7 @@ app.controller('PostsController',
                 comments = comments + 1;
                 $('#' + postId + ' p').eq(3).html(comments);
                 $('#commentForm-' + postId).css('display','none');
+                $scope.getPostComments(postId);
             }, function(err){console.log(err)})
         },
 

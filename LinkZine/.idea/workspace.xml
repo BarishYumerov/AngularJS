@@ -24,21 +24,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Comment.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Comment.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/partials/Posts/Comment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35915494" vertical-offset="0" max-vertical-offset="578">
-              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="578">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserWallController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserWallController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/controllers/UserWallController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2211" max-vertical-offset="3111">
-              <caret line="164" column="34" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.513468" vertical-offset="2534" max-vertical-offset="3162">
+              <caret line="167" column="43" selection-start-line="167" selection-start-column="43" selection-end-line="167" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostsController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/controllers/PostsController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="2142">
+              <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -57,7 +67,7 @@
       <file leaf-file-name="UserHomeController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/controllers/UserHomeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="2397">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1790" max-vertical-offset="2397">
               <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="6" selection-end-column="9" />
               <folding />
             </state>
@@ -77,8 +87,8 @@
       <file leaf-file-name="UserWall.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/partials/Users/UserWall.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="578">
-              <caret line="17" column="114" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="114" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="629">
+              <caret line="19" column="72" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="72" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -140,15 +150,15 @@
         <option value="$PROJECT_DIR$/app/partials/Users/UserFriendsPreview.html" />
         <option value="$PROJECT_DIR$/app/partials/Users/AllUserFriends.html" />
         <option value="$PROJECT_DIR$/app/partials/Posts/Post.html" />
-        <option value="$PROJECT_DIR$/app/js/controllers/PostsController.js" />
         <option value="$PROJECT_DIR$/app/js/controllers/EditProfileController.js" />
         <option value="$PROJECT_DIR$/app/partials/DynamicSearchResult.html" />
         <option value="$PROJECT_DIR$/app/css/app.css" />
         <option value="$PROJECT_DIR$/app/js/services/postsService.js" />
-        <option value="$PROJECT_DIR$/app/js/controllers/UserWallController.js" />
-        <option value="$PROJECT_DIR$/app/partials/Users/UserWall.html" />
         <option value="$PROJECT_DIR$/app/partials/Posts/userPosts.html" />
         <option value="$PROJECT_DIR$/app/partials/Posts/Comment.html" />
+        <option value="$PROJECT_DIR$/app/js/controllers/PostsController.js" />
+        <option value="$PROJECT_DIR$/app/partials/Users/UserWall.html" />
+        <option value="$PROJECT_DIR$/app/js/controllers/UserWallController.js" />
       </list>
     </option>
   </component>
@@ -793,14 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/controllers/PostsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2125">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/partials/DynamicSearchResult.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029929578" vertical-offset="0" max-vertical-offset="568">
@@ -833,32 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/controllers/UserHomeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2397">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="6" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/controllers/UserWallController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2211" max-vertical-offset="3111">
-          <caret line="164" column="34" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/partials/Users/UserWall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="578">
-          <caret line="17" column="114" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="114" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/partials/Posts/userPosts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="646">
@@ -871,8 +847,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/partials/Posts/Comment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35915494" vertical-offset="0" max-vertical-offset="578">
-          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="578">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/PostsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="2142">
+          <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/UserHomeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2397">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/partials/Users/UserWall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="629">
+          <caret line="19" column="72" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/controllers/UserWallController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.513468" vertical-offset="2534" max-vertical-offset="3162">
+          <caret line="167" column="43" selection-start-line="167" selection-start-column="43" selection-end-line="167" selection-end-column="43" />
           <folding />
         </state>
       </provider>

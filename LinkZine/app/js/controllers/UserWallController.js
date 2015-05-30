@@ -104,6 +104,7 @@ app.controller('UserWallController',
                 comments = comments + 1;
                 $('#' + postId + ' p').eq(3).html(comments);
                 $('#commentForm-' + postId).css('display','none');
+                $scope.getPostComments(postId);
             }, function(err){console.log(err)})
         },
 
@@ -163,6 +164,8 @@ app.controller('UserWallController',
             };
             postsService.postPost(data, function(data){
                 console.log(data);
+                $scope.userNewsFeed.unshift(data);
+                $('#postPostContent').val("");
             }, function(err){
                 console.log(err);
             })
