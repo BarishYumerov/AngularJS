@@ -141,8 +141,11 @@ app.controller('UserHomeController',
         $scope.getUserPreview = function($event, username){
             userService.getUserPreview(username, function(data){
                 $('#userPreview').remove();
+                if(!data.profileImageData){
+                    data.profileImageData = "http://www.balaniinfotech.com/wp-content/themes/balani/images/noimage.jpg"
+                }
                 var info = $('<div id="userPreview">' +
-                '<img src="' + data.profileImageData + '" alt=""/> <p>' + data.name +'</p>' +
+                '<img src="' + data.profileImageData + '" width="120px" alt=""/> <p>' + data.name +'</p>' +
                 '</div>');
                 var btn1;
                 if(data.isFriend){
@@ -166,6 +169,17 @@ app.controller('UserHomeController',
             postsService.deletePost(postId, function(data){
                 console.log(data);
                 $('#' + postId).remove();
+            }, function(err){console.log(err)})
+        };
+
+        $scope.editPost = function(postId, content){
+            var data = {
+                postContent: content
+            };
+            postsService.editPost(postId, data, function(data){
+                console.log(data);
+                $('#editPostForm-' + postId).css('display', 'none');
+                $('#postContent-' + postId).css('display', 'block').html(data.content);
             }, function(err){console.log(err)})
         };
 

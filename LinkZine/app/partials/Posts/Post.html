@@ -3,7 +3,13 @@
         <div class="well bs-component" id="{{post.id}}">
             <img ng-src="{{post.author.profileImageData}}" width="50px" alt=""/>
             <p id="postAuthorName"><b><u ng-mouseover="getUserPreview($event, post.author.username)" >{{post.author.name}}</u></b> at {{post.date}}</p>
-            <p id="postContent">{{post.postContent}}</p>
+            <p id="postContent-{{post.id}}">{{post.postContent}}</p>
+            <div id="editPostForm-{{post.id}}" class="editPostForm">
+                <textarea id="editPostTextArea" cols="60" rows="2" ng-model="editPostContent" placeholder="{{post.postContent}}">
+                    {{post.postContent}}</textarea>
+                <button ng-click="editPost(post.id, editPostContent)"
+                        class="confirmEditPost btn btn-success btn-xs">Edit Post</button>
+            </div>
             <p class="postInfo">{{post.likesCount}} likes</p>
             <a href="">
                 <img ng-click ="post.liked = !post.liked; likePost(post.id)" ng-hide="post.liked" id="postLike" width="50px"
@@ -16,8 +22,12 @@
                             src="http://4.bp.blogspot.com/-KMK_7HykDDw/Uvq6PoPwhAI/AAAAAAAAA90/oCyaHIn0Dd8/s1600/transparent.png" alt=""/>
             </a>
             <a class="addComment" ng-click=showCommentForm(post.id)>Add comment</a>
+
             <button ng-show="post.author.username == loggedUserData.username || post.wallOwner.username == loggedUserData.username"
                     class="btn btn-danger btn-xs deletePost" ng-click="deletePost(post.id)">Delete Post
+            </button>
+            <button ng-show="post.author.username == loggedUserData.username"
+                    class="btn btn-info btn-xs" ng-click="deletePost(post.id)">Edit Post
             </button>
             <div class="addCommentForm" id="commentForm-{{post.id}}">
                 <textarea class="addCommentContent" name="commentContent" cols="60" ng-model="addCommentContent" rows="2"></textarea>

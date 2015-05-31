@@ -39,6 +39,7 @@ blockquote{
 
 .userName{
 	width: 300px;
+	cursor: pointer;
 }
 
 .jumbotron{
@@ -247,6 +248,10 @@ hr{
 	display: none;
 }
 
+.editPostForm{
+	display: none;
+}
+
 #cm{
 	margin-top: 5px;
 	margin-right: 5px;
@@ -316,4 +321,18 @@ textarea{
 
 .deletePost{
 	float: right;
+}
+
+.editPost{
+	float: right;
+	margin-right: 5px;
+}
+
+.confirmEditPost{
+	vertical-align: top;
+	margin-top: 10px;
+}
+
+#editPostTextArea{
+	margin-top: 10px;
 }

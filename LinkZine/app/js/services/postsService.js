@@ -136,6 +136,18 @@ app.factory('postsService',
                 $http(request).success(function (data) {
                     success(data);
                 }).error(error);
+            },
+
+            editPost: function(postId, data, success, error){
+                var request = {
+                    method: 'PUT',
+                    url: baseServiceUrl + '/Posts/' + postId,
+                    headers: authService.getAuthHeaders(),
+                    data: data
+                };
+                $http(request).success(function (data) {
+                    success(data);
+                }).error(error);
             }
         }
     }

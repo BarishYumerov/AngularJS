@@ -5,7 +5,7 @@
         </div>
 
         <ul class="nav navbar-nav">
-            <li class="userName"><a href="#/users/{{loggedUserData.username}}" ng-click="getUserFullData(loggedUserData.username)"
+            <li class="userName"><a ng-click="getUserFullData(loggedUserData.username)"
                                     class="imgProfile profileImg">
                 <img ng-src="{{loggedUserData.profileImageData}}" width="30" ng-click="logout()"/>
                 <i>{{loggedUserData.name}}</i>
