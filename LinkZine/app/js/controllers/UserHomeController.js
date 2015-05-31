@@ -62,6 +62,7 @@ app.controller('UserHomeController',
         $scope.changePassword = function(passwrd){
             userService.changePassword(passwrd, function(data){
                     console.log(data);
+                    $.notify("Password change was successful", "success");
                 },
                 function(err){
                     console.log(err)

@@ -11,6 +11,7 @@ app.controller('LoginController',
                 },
                 function error(err) {
                     $.notify("Invalid username or password", "error");
+                    $location.path("/");
                 }
             );
         };
