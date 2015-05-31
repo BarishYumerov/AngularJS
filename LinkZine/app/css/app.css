@@ -6,8 +6,13 @@ span{
 	display: block;
 }
 
+
 .userHeader nav ul a{
 	padding-bottom: 0px;
+}
+
+.profileImage{
+	cursor: pointer;
 }
 
 .profileImg.imgProfile{
@@ -47,13 +52,19 @@ blockquote{
 }
 
 .mainForm{
-	margin-left: 25%;
+	margin-left: 35%;
 	margin-top: 5%;
 }
+.mainForm label{
+	margin-right: 100px;
+}
+
 
 .registerForm{
 	margin-left: 10%;
 	margin-top: 5%;
+	margin-left: 30%;
+	width: 1000px;
 }
 .registerForm label{
 	display: block;
@@ -97,6 +108,12 @@ i{
 	cursor: pointer;
 }
 
+#allRequests{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 500px;
+}
+
 .dynamicSearchName{
 	text-decoration: underline;
 }
@@ -131,6 +148,9 @@ i{
 }
 .requestUserName{
 	margin: 15px 0px;
+}
+#friendsPreviewWrapper{
+	display: inline-block;
 }
 
 .requestUserName{
@@ -184,6 +204,7 @@ h2{
 #postAuthorName{
 	display: inline-block;
 	vertical-align: top;
+	cursor: pointer;
 }
 
 #postContent{

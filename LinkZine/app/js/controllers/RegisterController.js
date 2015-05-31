@@ -3,7 +3,7 @@
 app.controller('RegisterController',
     function($scope, $rootScope, $location, authService, notifyService){
         $scope.registerUser = {};
-
+        sessionStorage.clear();
         $scope.register = function(userData) {
             console.log(userData);
             authService.register(userData,

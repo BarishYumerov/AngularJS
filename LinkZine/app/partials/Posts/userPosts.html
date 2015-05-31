@@ -1,7 +1,7 @@
 <div ng-repeat="post in userNewsFeed">
     <div class="col-lg-6 post">
         <div class="well bs-component" id="{{post.id}}">
-            <img ng-src="{{post.author.profileImageData}}" width="50px" alt=""/>
+            <img ng-src="{{post.author.profileImageData}}" ng-click="getUserFullData(post.author.username)" class="profileImage" width="50px" alt=""/>
             <p id="postAuthorName" ><b><u ng-mouseover="getUserPreview($event, post.author.username)" >{{post.author.name}}</u></b> at {{post.date}}</p>
             <p id="postContent-{{post.id}}">{{post.postContent}}</p>
             <div id="editPostForm-{{post.id}}" class="editPostForm">

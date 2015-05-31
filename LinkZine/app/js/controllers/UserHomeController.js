@@ -82,7 +82,6 @@ app.controller('UserHomeController',
             $scope.isRequestsHovered = true;
             userService.getFriendRequests(function(data){
                 $scope.requestResults = data;
-                console.log(data);
             },
             function(err){
                 console.log(err);
