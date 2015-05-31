@@ -18,6 +18,7 @@ app.controller('UserHomeController',
             $scope.loggedUserData = data;
             $scope.friendsPreview = $scope.getMyFriends();
             $scope.allMyFriends = $scope.getAllMyFriends();
+            $scope.friendRequestPreview = $scope.getFriendRequests();
             },
             function(err){
                 console.log(err)

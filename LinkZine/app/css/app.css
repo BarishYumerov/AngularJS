@@ -336,3 +336,15 @@ textarea{
 #editPostTextArea{
 	margin-top: 10px;
 }
+
+#friendNotificationCounter{
+	display: inline-block;
+	background-color: red;
+	border-radius: 5px;
+	width: 15px;
+	text-align: center;
+	font-size: 10px;
+	margin-left: 20px;
+	color: #ffffff;
+	font-weight: bold;
+}
