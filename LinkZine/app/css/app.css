@@ -6,6 +6,10 @@ span{
 	display: block;
 }
 
+.navbar{
+	margin-bottom: 0px;
+}
+
 .userHeader nav ul a{
 	padding-bottom: 0px;
 }
@@ -95,7 +99,7 @@ i{
 .passwordForm{
 	display: inline-block;
 	width: 400px;
-	margin: 50px 100px;
+	margin: 50px 400px;
 }
 
 .resultPerson{
@@ -272,8 +276,15 @@ hr{
 	display: none;
 }
 
+
+
 .editPostForm{
 	display: none;
+}
+
+.editProfileForm{
+	margin-top: 50px;
+	margin-left: 20px;
 }
 
 #cm{
