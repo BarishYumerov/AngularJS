@@ -1,6 +1,6 @@
 <header ng-include="'partials/UserHomeHeader.html'" ng-click="overFriendRefusts()"></header>
-<blockquote><h1>My Friends (Total: {{allMyFriends.length}})</h1></blockquote>
-<div id="allFriendSearch">
+<blockquote ng-click="overFriendRefusts()"><h1>My Friends (Total: {{allMyFriends.length}})</h1></blockquote>
+<div id="allFriendSearch" ng-click="overFriendRefusts()">
     <label for="allFriendSearchName">Name filter</label>
     <input id="allFriendSearchName" type="text" ng-model="filterName"/>
     <div class="bs-component" style="display: inline-block">

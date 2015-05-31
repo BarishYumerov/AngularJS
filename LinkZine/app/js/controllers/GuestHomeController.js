@@ -2,6 +2,8 @@
 
 app.controller('GuestHomeController',
     function($scope, $rootScope, $location){
-        sessionStorage.clear();
+        if(sessionStorage.currentUser){
+            $location.path('/userHome');
+        }
     }
 );

@@ -1,5 +1,5 @@
 <header ng-include="'partials/UserHomeHeader.html'" ng-click="overFriendRefusts()"></header>
-<div id="allRequests">
+<div id="allRequests" ng-click="overFriendRefusts()">
     <h1>Friend Requests: </h1>
     <div class="resultRequest" ng-repeat="result in requestResults" id="{{result.id}}">
         <img src="{{result.user.profileImageData}}" width="40px" alt=""/>

@@ -62,21 +62,30 @@ app.controller('UserWallController',
                     data.profileImageData = "http://www.balaniinfotech.com/wp-content/themes/balani/images/noimage.jpg"
                 }
                 var info = $('<div id="userPreview">' +
-                '<img src="' + data.profileImageData + '" width=120px alt=""/> <p>' + data.name +'</p>' +
+                '<img src="' + data.profileImageData + '" width="120px" alt=""/> <p>' + data.name +'</p>' +
                 '</div>');
-                var btn1
+                var gender;
+                var btn1;
+                if(parseInt(data.gender) == 0){
+                    gender = $('<img width="20px" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Mars_symbol.svg/1024px-Mars_symbol.svg.png"/>')
+                }
+                else{
+                    gender = $('<img width="20px" src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Venus_symbol.svg/1000px-Venus_symbol.svg.png"/>')
+                }
                 if(data.isFriend){
                     btn1 = $('<button class="btn btn-success btn-xs">Friend</button>')
                 }
-                else if(data.hasPendingRequest){
+                else if(data.hasPendingRequest && data.username != $scope.loggedUserData.username){
                     btn1 = $('<button class="btn btn-warning btn-xs">Pending</button>')
                 }
-                else{
+                else if(data.username != $scope.loggedUserData.username){
                     btn1 = $('<button class="btn btn-info btn-xs">Invite</button>')
                 }
                 info.css('left', $event.x);
                 info.css('top', $event.y + $(window).scrollTop());
+                info.append(gender);
                 info.append(btn1);
+                $('#userPreview').mouseleave(function(){$('#userPreview').remove()});
                 $('body').append(info);
             }, function(err){console.log(err)})
         };
