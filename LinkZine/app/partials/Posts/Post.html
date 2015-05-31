@@ -27,7 +27,7 @@
                     class="btn btn-danger btn-xs deletePost" ng-click="deletePost(post.id)">Delete Post
             </button>
             <button ng-show="post.author.username == loggedUserData.username"
-                    class="btn btn-info btn-xs" ng-click="deletePost(post.id)">Edit Post
+                    class="btn btn-info btn-xs editPost" ng-click="deletePost(post.id)">Edit Post
             </button>
             <div class="addCommentForm" id="commentForm-{{post.id}}">
                 <textarea class="addCommentContent" name="commentContent" cols="60" ng-model="addCommentContent" rows="2"></textarea>

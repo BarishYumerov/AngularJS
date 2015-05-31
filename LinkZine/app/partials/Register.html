@@ -2,35 +2,35 @@
 <div class="registerForm">
     <div class="col-lg-6">
         <div class="well bs-component">
-            <form class="form-horizontal">
+            <form class="form-horizontal" name="registerForm">
                 <fieldset>
                     <legend>Register</legend>
                     <div class="form-group">
                         <label for="username" class="col-lg-2 control-label">Username</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" ng-model="registerUser.Username"
-                                   id="username" placeholder="username">
+                                   id="username" placeholder="username" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="password" class="col-lg-2 control-label">Password</label>
                         <div class="col-lg-10">
                             <input type="password" class="form-control" id="password" ng-model="registerUser.Password"
-                                   placeholder="Password">
+                                   placeholder="Password" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="cofirmPassword" class="col-lg-2 control-label">Confirm Password</label>
                         <div class="col-lg-10">
                             <input type="password" class="form-control" ng-model="registerUser.ConfirmPassword"
-                                   id="cofirmPassword" placeholder="Password">
+                                   id="cofirmPassword" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-lg-2 control-label">Full name</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="name" ng-model="registerUser.Name"
-                                   placeholder="full name"/>
+                                   placeholder="full name" required/>
                         </div>
                     </div>
 
@@ -38,7 +38,7 @@
                         <label for="email" class="col-lg-2 control-label">Email</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="email" ng-model="registerUser.Email"
-                                   placeholder="email"/>
+                                   placeholder="email" required/>
                         </div>
                     </div>
 
@@ -72,7 +72,8 @@
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                             <a href="#/"><button type="reset" class="btn btn-default">Cancel</button></a>
-                            <button type="submit" ng-click="register(registerUser)" class="btn btn-primary">Register</button>
+                            <button type="submit" ng-click="register(registerUser)" class="btn btn-primary"
+                                    ng-disabled="registerForm.$invalid">Register</button>
                         </div>
                     </div>
                 </fieldset>
