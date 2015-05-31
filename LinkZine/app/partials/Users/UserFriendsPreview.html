@@ -1,10 +1,10 @@
-<div class="bs-component" style="display: inline-block">
+<div class="bs-component" style="display: inline-block"  ng-click="overFriendRefusts()">
     <div class="jumbotron" style="display: inline-block">
         <h5><a href="#/users/{{userWallData.username}}/friends" ng-click="getUserDetailedFriendlist(userWallData.username)">
             Total friends: {{userFriendsPreview.totalCount}}</a></h5>
         <div class="friends">
-            <div class="friendPreview" ng-repeat="friend in userFriendsPreview.friends"
-                 ng-style="{'background-image': 'url({{ friend.profileImageData }})'}">
+            <div class="friendPreview cursor" ng-repeat="friend in userFriendsPreview.friends"
+                 ng-style="{'background-image': 'url({{ friend.profileImageData }})'}" ng-click="getUserFullData(friend.username)">
                 <p id="friendPreviewName">{{friend.name}}</p>
             </div>
         </div>

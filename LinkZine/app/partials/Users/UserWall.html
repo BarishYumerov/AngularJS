@@ -1,7 +1,7 @@
 <header ng-include="'partials/UserHomeHeader.html'" ng-click="overFriendRefusts()"></header>
 <div ng-controller="UserWallController">
 
-    <div id="userHeader"  ng-style="{'background-image': 'url({{ userWallData.coverImageData }})'}">
+    <div ng-click="overFriendRefusts()" id="userHeader"  ng-style="{'background-image': 'url({{ userWallData.coverImageData }})'}">
         <div id="userProfileImg" ng-style="{'background-image': 'url({{ userWallData.profileImageData }})'}"></div>
         <p id="userFullName">{{userWallData.name}}</p>
         <button ng-show="!userWallData.isFriend && !userWallData.hasPendingRequest && userWallData.username != loggedUserData.username"

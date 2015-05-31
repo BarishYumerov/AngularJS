@@ -6,8 +6,8 @@
     <div class="bs-component" style="display: inline-block">
         <div class="jumbotron" style="display: inline-block">
             <div class="allFriendsPreview">
-                <div class="friendPreview" ng-repeat="friend in allMyFriends | filter : filterName"
-                     ng-style="{'background-image': 'url({{ friend.profileImageData }})'}">
+                <div class="friendPreview cursor" ng-repeat="friend in allMyFriends | filter : filterName"
+                     ng-style="{'background-image': 'url({{ friend.profileImageData }})'}" ng-click="getUserFullData(friend.username)">
                     <p id="friendPreviewName">{{friend.name}}</p>
                 </div>
             </div>

@@ -18,10 +18,13 @@
                 </form>
             </li>
             <li><a href="#/friendRequests" ng-click="getFriendRequests()">
+                <table ng-mouseover="getFriendRequests()">
                     <tr>
                         <td></td>
                         <td rowspan=2><img width="27px" src="https://www.seoclerk.com/pics/234145-2lFYyn1402774616.png"></td>
                     </tr>
+                    <tr ng-show="requestResults.length != 0">
+                        <td colspan=2><p id="friendNotificationCounter">{{requestResults.length}}</td>
                     </tr>
                 </table>
             </a></li>
