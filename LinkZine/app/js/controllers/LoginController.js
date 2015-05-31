@@ -6,11 +6,11 @@ app.controller('LoginController',
         $scope.login = function(userData) {
             authService.login(userData,
                 function success() {
-                    notifyService.showInfo("Login successful");
+                    $.notify("Login successful", "success");
                     $location.path("/userHome");
                 },
                 function error(err) {
-                    notifyService.showError("Login failed", err);
+                    $.notify("Invalid username or password", "error");
                 }
             );
         };

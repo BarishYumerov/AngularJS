@@ -27,10 +27,9 @@ app.controller('UserHomeController',
 
         $scope.logout = function () {
             authService.logout(function(){
-                notifyService.showInfo("Logout successful");
+                $.notify("Logout was successful", "success");
                 $location.path("/");
             }, function(err){
-                notifyService.showError("Logout failed", err);
             })
         };
 

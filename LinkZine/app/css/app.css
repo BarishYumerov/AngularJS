@@ -6,7 +6,6 @@ span{
 	display: block;
 }
 
-
 .userHeader nav ul a{
 	padding-bottom: 0px;
 }
@@ -84,7 +83,7 @@ blockquote{
 	display: inline-block;
 	position: absolute;
 	top: 50px;
-	right: 547px;
+	right: 533px;
 	width: 220px;
 	padding: 5px;
 	background-color: #2c3e50;

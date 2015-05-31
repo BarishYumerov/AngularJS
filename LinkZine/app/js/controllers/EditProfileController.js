@@ -39,11 +39,11 @@ app.controller('EditProfileController',
         $scope.edit = function(userData) {
             userService.editUser(userData,
                 function success() {
-                    notifyService.showInfo("User profile edited successfully");
+                    $.notify("Profile edition was successful", "success");
                     $location.path("/");
                 },
                 function error(err) {
-                    notifyService.showError("User proifle edit failed", err);
+                    $.notify("Please fill all inputs", "error");
                 }
             );
         };
